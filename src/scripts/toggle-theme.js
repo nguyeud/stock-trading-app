@@ -23,12 +23,12 @@ themeToggleBtn.addEventListener('click', function() {
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
-            toggleNavLogo.setAttribute("src", "images/logo.png");
+            toggleNavLogo.setAttribute("src", "../../public/images/logo.png");
             toggleBody.classList.add("bg-slate-900");
         } else {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
-            toggleNavLogo.setAttribute("src", "images/logo-black.png");
+            toggleNavLogo.setAttribute("src", "../../public/images/logo-black.png");
             toggleBody.classList.remove("bg-slate-900");
         }
 
@@ -37,12 +37,12 @@ themeToggleBtn.addEventListener('click', function() {
         if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
-            toggleNavLogo.setAttribute("src", "images/logo-black.png");
+            toggleNavLogo.setAttribute("src", "../../public/images/logo-black.png");
             toggleBody.classList.remove("bg-slate-900");
         } else {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
-            toggleNavLogo.setAttribute("src", "images/logo.png");
+            toggleNavLogo.setAttribute("src", "../../public/images/logo.png");
             toggleBody.classList.add("bg-slate-900");
         }
     }
