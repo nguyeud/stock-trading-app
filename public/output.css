@@ -1963,6 +1963,10 @@ input:checked + .toggle-bg {
     margin-top: 0px;
   }
 
+  .sm\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
   .sm\:h-9 {
     height: 2.25rem;
   }
