@@ -63,12 +63,12 @@
                                 aria-current="page">Home</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-                        </li>
-                        <li>
                             <a href="../src/pages/dashboard.html"
                                 class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Watchlist</a>
                         </li>
                         <li>
                             <a href="#"
@@ -79,11 +79,40 @@
             </div>
         </nav>
     </header>
-    <main class="bg-white px-2 sm:px-4 dark:bg-gray-900 flex flex-grow flex-col md:flex-row">
-        <!-- Main content here -->
+    <main class="bg-white px-2 sm:px-4 dark:bg-gray-900 flex flex-grow flex-col">
+        <div class="flex flex-col items-center text-center">
+            <h1
+                class="mb-4 text-6xl font-extrabold tracking-tight leading-none text-gray-900 md:text-8xl dark:text-white">
+                Stocks.
+            </h1>
+            <h2
+                class="mb-4 text-2xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-6xl dark:text-white">
+                For Literally Everyone.
+            </h2>
+            <p class="mx-6 mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Here at <span class="text-xl font-semibold whitespace-nowrap dark:text-white">stout stonks</span>, we
+                focus on technology that can unlock long-term value for our consumers.
+            </p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+            <img src="images/iphone-blank.png">
+        </div>
     </main>
-    <footer>
-
+    <footer class="p-2 bg-white shadow md:flex md:items-center md:justify-between md:p-4 dark:bg-gray-800">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="#"
+                class="hover:underline">VR21 Team 3</a>. All Rights Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+            </li>
+            <li>
+                <a href="https://github.com/nguyeud/stock-trading-app" class="mr-4 hover:underline md:mr-6">Github</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
     </footer>
     <script src="../node_modules/flowbite/dist/flowbite.js"></script>
     <script src="../src/scripts/toggle-theme.js"></script>

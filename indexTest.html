@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css"
+    />
+    <link rel="stylesheet" href="public/output.css"> 
+  </head>
+  <body style=>
+    <div id="newsSection">
+      <div
+        class="w-full max-w-lg p-2 bg-white border rounded-lg shadow-md sm:p-1 dark:bg-gray-800 dark:border-gray-700"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <h5
+            class="text-xl font-bold leading-none text-gray-900 dark:text-white"
+          >
+            Latest Market News
+          </h5>
+          <a
+            href="#"
+            class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" id="viewAllNews"
+          >
+            View all
+          </a>
+          <a
+            href="#"
+            class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" id="viewLessNews"
+          >
+            View less
+          </a>
+        </div>
+        <div class="overflow-y-auto h-screen list-none" id="flowRoot">
+          <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+            <!-- <li class="py-3 sm:py-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                Neil Sims
+                            </p>
+                        </div>
+                    </div>
+                </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+    <script src="bundle.js"></script>
+
+    <script src="../node_modules/flowbite/dist/flowbite.js"></script>
+    <!-- <script src="../node_modules/finnhub/dist/index.js"></script> -->
+
+    <script src="./cardListStocks.js"></script>
+  </body>
+</html>
