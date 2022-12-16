@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stout stonks</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon-blue.png">
     <link rel="stylesheet" href="../src/styles/uicons.css">
     <link rel="stylesheet" href="output.css">
     <script>
@@ -14,17 +14,17 @@
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
-            document.documentElement.classList.remove('dark')
+            document.documentElement.classList.remove('dark');
         }
     </script>
 </head>
 
-<body class="bg-slate-900">
+<body class="flex flex-col h-screen">
     <header>
-        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
                 <a href="#" class="flex items-center">
-                    <img id="nav-logo" src="images/logo.png" class="h-6 mr-3 sm:h-9" alt="stout stonks logo" />
+                    <img id="nav-logo" src="images/logo-blue.png" class="h-6 mr-3 sm:h-9" alt="stout stonks logo" />
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">stout
                         stonks</span>
                 </a>
@@ -79,7 +79,7 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="bg-white px-2 sm:px-4 dark:bg-gray-900 flex flex-grow flex-col md:flex-row">
         <!-- Main content here -->
     </main>
     <script src="../node_modules/flowbite/dist/flowbite.js"></script>
