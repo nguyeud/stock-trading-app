@@ -19,7 +19,7 @@
     </script>
 </head>
 
-<body class="flex flex-col h-screen">
+<body class="flex flex-col lg:max-h-screen">
     <header>
         <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
@@ -217,114 +217,46 @@
         <div
             class="md:w-1/3 w-full mb-4 p-4 bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
-                <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
-                <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+                <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Market News</h5>
+                <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" id="news-view">
                     View all
                 </a>
             </div>
             <div class="flow-root">
-                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-                    <li class="py-3 sm:py-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="flex-shrink-0">
-                                <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150"
-                                    alt="Neil image">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Neil Sims
-                                </p>
-                                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    email@windster.com
-                                </p>
-                            </div>
-                            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                $320
-                            </div>
-                        </div>
-                    </li>
-                    <li class="py-3 sm:py-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="flex-shrink-0">
-                                <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150"
-                                    alt="Bonnie image">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Bonnie Green
-                                </p>
-                                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    email@windster.com
-                                </p>
-                            </div>
-                            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                $3467
-                            </div>
-                        </div>
-                    </li>
-                    <li class="py-3 sm:py-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="flex-shrink-0">
-                                <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150"
-                                    alt="Michael image">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Michael Gough
-                                </p>
-                                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    email@windster.com
-                                </p>
-                            </div>
-                            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                $67
-                            </div>
-                        </div>
-                    </li>
-                    <li class="py-3 sm:py-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="flex-shrink-0">
-                                <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150"
-                                    alt="Lana image">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Lana Byrd
-                                </p>
-                                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    email@windster.com
-                                </p>
-                            </div>
-                            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                $367
-                            </div>
-                        </div>
-                    </li>
-                    <li class="pt-3 pb-0 sm:pt-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="flex-shrink-0">
-                                <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150"
-                                    alt="Thomas image">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Thomes Lean
-                                </p>
-                                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    email@windster.com
-                                </p>
-                            </div>
-                            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                $2367
-                            </div>
+                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" id="news-list">
+                <!-- <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 overflow-y-auto h-20" id="news-list"> -->
+                    <!-- Insert list here -->
+                    <li class="py-3 sm:py-4 sm:pt-4">
+                        <div class="flex space-x-4">
+                            <img class="flex-shrink-0 w-24 h-24 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-md object-cover" src="https://via.placeholder.com/150">
+                            <a class="text-base font-medium text-gray-900 dark:text-white line-clamp-4" href="#">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt quia velit rerum, distinctio esse fuga non!
+                            </a>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </main>
+    <footer class="p-2 bg-white shadow md:flex md:items-center md:justify-between md:p-4 dark:bg-gray-800">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="#"
+                class="hover:underline">VR21 Team 3</a>. All Rights Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+            </li>
+            <li>
+                <a href="https://github.com/nguyeud/stock-trading-app" class="mr-4 hover:underline md:mr-6">Github</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
+    </footer>
     <script src="../../node_modules/flowbite/dist/flowbite.js"></script>
     <script src="../../src/scripts/toggle-theme.js"></script>
+    <!-- <script src="../scripts/market-news-bundle.js"></script> -->
 </body>
 
 </html>
