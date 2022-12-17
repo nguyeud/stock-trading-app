@@ -1,24 +1,31 @@
 const finnhub = require("finnhub");
 
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
-api_key.apiKey = "cedmv5iad3i32ebrltggcedmv5iad3i32ebrlth0";
+api_key.apiKey = "";
 
 const finnhubClient = new finnhub.DefaultApi();
-const viewNews = document.getElementById("news-view");
-const listNews = document.getElementById("news-list");
+const unorderedList = document.getElementById("news-list");
+const loader = document.getElementById("news-loader");
+const view = document.getElementById("news-view");
 
-viewNews.addEventListener("click", viewNews);
+let unorderedListTags;
 
-function createList() {
+view.addEventListener("click", viewMoreOrLess);
+
+// On window load or callback, create list of news items
+function createList(num) {
     finnhubClient.marketNews("general", {}, (error, data, response) => {
         const dataArray = data;
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < num; i++) {
             const image = dataArray[i].image;
             const title = dataArray[i].headline;
             const link = dataArray[i].url;
             createNewsItem(image, title, link);
         }
+
+        // Hide loader
+        loader.classList.add("hidden");
     })
 }
 
@@ -33,10 +40,41 @@ function createNewsItem(image, title, link) {
         </div>
     </li>`;
 
-    listNews.insertAdjacentHTML("beforeend", itemHTML);
+    unorderedList.insertAdjacentHTML("beforeend", itemHTML);
+}
+
+function removeNewsItems() {
+    unorderedListTags = unorderedList.querySelectorAll("li");
+
+    for (const tag of unorderedListTags) {
+        tag.remove();
+    }
+
+    // Display loader
+    loader.classList.remove("hidden");
+}
+
+function viewMoreOrLess() {
+    if (view.innerText === "View more") {
+        viewMore();
+    } else {
+        viewLess();
+    }
+}
+
+function viewMore() {
+    view.innerText = "View less";
+    removeNewsItems();
+    createList(10);
+}
+
+function viewLess() {
+    view.innerText = "View more";
+    removeNewsItems();
+    createList(5);
 }
 
 // On window load
 window.addEventListener("load", (e) => {
-    createList();
+    createList(5);
 })

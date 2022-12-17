@@ -80,10 +80,9 @@
             </div>
         </nav>
     </header>
-    <main
-        class="bg-white px-2 sm:px-4 dark:bg-gray-900 flex flex-grow flex-col md:flex-row gap-4">
+    <main class="bg-white px-2 sm:px-4 dark:bg-gray-900 flex flex-grow flex-col md:flex-row gap-4">
         <div
-            class="md:w-3/4 w-full flex flex-col bg-white border rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-800 p-4 sm:p-8">
+            class="md:w-3/4 w-full flex flex-col bg-white border rounded-lg dark:border-gray-700 dark:bg-gray-800 p-4 sm:p-8">
             <form>
                 <label for="default-search"
                     class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -103,7 +102,8 @@
                 </div>
             </form>
             <div class="flex flex-col flex-grow lg:flex-row items-center">
-                <div class="flex w-full justify-center lg:w-2/3 rounded-t-lg md:rounded-none md:rounded-l-lg" id="like_button_container">
+                <div class="flex w-full justify-center lg:w-2/3 rounded-t-lg md:rounded-none md:rounded-l-lg"
+                    id="like_button_container">
                     <!-- Insert graph here -->
                     <img class="px-4 h-full" src="../../public/images/logo-blue.png">
                 </div>
@@ -129,7 +129,8 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div
+                                    class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                     $320
                                 </div>
                             </div>
@@ -148,7 +149,8 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div
+                                    class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                     $3467
                                 </div>
                             </div>
@@ -167,7 +169,8 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div
+                                    class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                     $67
                                 </div>
                             </div>
@@ -186,7 +189,8 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div
+                                    class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                     $367
                                 </div>
                             </div>
@@ -205,7 +209,8 @@
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div
+                                    class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                                     $2367
                                 </div>
                             </div>
@@ -215,30 +220,33 @@
             </div>
         </div>
         <div
-            class="md:w-1/3 w-full p-4 bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            class="md:w-1/3 w-full p-4 bg-white border rounded-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4 md:flex-col lg:flex-row">
                 <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Market News</h5>
                 <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500" id="news-view">
-                    View all
+                    View more
                 </a>
             </div>
-            <div class="flow-root overflow-y-auto max-h-[644px]">
+            <div class="flow-root overflow-y-auto max-h-[650px]">
                 <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" id="news-list">
-                <!-- <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 overflow-y-auto h-20" id="news-list"> -->
                     <!-- Insert list here -->
-                    <li class="py-3 sm:py-4 sm:pt-4 pr-4">
-                        <div class="flex space-x-4">
-                            <img class="flex-shrink-0 w-24 h-24 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-md object-cover" src="https://via.placeholder.com/150">
-                            <a class="text-base font-medium text-gray-900 dark:text-white line-clamp-4" href="#">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt quia velit rerum, distinctio esse fuga non!
-                            </a>
+                    <div role="status" class="py-3 sm:py-4 pr-4 animate-pulse flex space-x-4 items-center"
+                        id="news-loader">
+                        <div class="w-full">
+                            <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-36 mb-4"></div>
+                            <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5"></div>
+                            <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+                            <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[440px] mb-2.5"></div>
+                            <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[460px] mb-2.5"></div>
+                            <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
                         </div>
-                    </li>
+                        <span class="sr-only">Loading...</span>
+                    </div>
                 </ul>
             </div>
         </div>
     </main>
-    <footer class="p-2 bg-white shadow md:flex md:items-center md:justify-between md:p-4 dark:bg-gray-900">
+    <footer class="p-2 bg-white md:flex md:items-center md:justify-between md:p-4 dark:bg-gray-900">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="#"
                 class="hover:underline">VR21 Team 3</a>. All Rights Reserved.
         </span>
