@@ -27360,25 +27360,17 @@ function createList() {
         const dataArray = data;
 
         for (let i = 0; i < 10; i++) {
-            const id = i;
             const image = dataArray[i].image;
             const title = dataArray[i].headline;
             const link = dataArray[i].url;
-            createNewsItem(id, image, title, link);
+            createNewsItem(image, title, link);
         }
     })
 }
 
-function createNewsItem(id, image, title, link) {
-    let tagClass;
-    if (id === 9 || id === 19) {
-        tagClass = "pt-3 pb-0 sm:pt-4";
-    } else {
-        tagClass = "py-3 sm:py-4";
-    }
-
+function createNewsItem(image, title, link) {
     const itemHTML = 
-    `<li class=${tagClass}>
+    `<li class="py-3 sm:py-4 pr-4">
         <div class="flex space-x-4">
             <img class="flex-shrink-0 w-24 h-24 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-md object-cover" src=${image}>
             <a class="text-base font-medium text-gray-900 dark:text-white line-clamp-3" href=${link}>
