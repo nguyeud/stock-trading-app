@@ -198,3 +198,5 @@ function createStockElement(pricingArray, financialArray) {
   `;
   unorderedPriceList.insertAdjacentHTML("beforeend", priceItemHtml);
 }
+
+// sadfsdaf
