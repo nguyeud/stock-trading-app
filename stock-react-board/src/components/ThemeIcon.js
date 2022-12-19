@@ -9,7 +9,7 @@ const ThemeIcon = () => {
         setDarkMode(!darkMode);
     };
 
-  return <button className={`rounded-lg border-neutral-400 p-2 absolute right-8 xl:right:32 shadow-xl w-20 h-20 ${darkMode ? "shadow-yellow-500" : null
+  return <button className={`rounded-lg border-neutral-400 p-1 relative right-8 xl:right:32 shadow-xl w-20 h-20 ${darkMode ? "shadow-yellow-100" : null
 }`} 
   onClick={toggleDarkMode}
   ><div className={`cursor-pointer stroke-1 ${
