@@ -19,7 +19,7 @@ const ThemeIcon = () => {
       : "fill-none stroke-neutral-400"
   }`}>
     <img src="https://media.istockphoto.com/id/1334613123/vector/moon-and-star-black-icon-of-moon-for-night-pictogram-of-crescent-and-star-logo-for-sleep-and.jpg?s=612x612&w=0&k=20&c=Gy6DGTiwY2lsGPXRr2f7kqPELZEUtG1MsSEce1BkPdo="
-        className="width:300px height:300px" />
+        className="width:300px height:300px" alt="asdfd"/>
         </div>
   </button>
 };
