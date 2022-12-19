@@ -1,9 +1,11 @@
-import { useState } from "react"
-import 'C:/StudentWork/WorkSpace2/TradingAppProject/stock-trading-app/stock-react-board/src/App.css';
-import Dashboard from 'C:/StudentWork/WorkSpace2/TradingAppProject/stock-trading-app/stock-react-board/src/components/Dashboard';
-import ThemeContext from 'C:/StudentWork/WorkSpace2/TradingAppProject/stock-trading-app/stock-react-board/src/context/ThemeContext';
-import StockContext from "C:/StudentWork/WorkSpace2/TradingAppProject/stock-trading-app/stock-react-board/src/context/StockContext";
+import React, { useState } from "react"
+import ReactDOM from 'react-dom'
+import '../src/App.css';
+import Dashboard from '../src/components/Dashboard';
+import ThemeContext from '../src/context/ThemeContext';
+import StockContext from "../src/context/StockContext";
 
+const e = React.createElement;
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -16,3 +18,7 @@ function App() {
 }
 
 export default App;
+
+const domContainer = document.querySelector('#root');
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(App));
