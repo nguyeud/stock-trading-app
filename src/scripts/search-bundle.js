@@ -27349,78 +27349,102 @@ const api_key = finnhub.ApiClient.instance.authentications["api_key"];
 api_key.apiKey = "cedmv5iad3i32ebrltggcedmv5iad3i32ebrlth0";
 const finnhubClient = new finnhub.DefaultApi();
 
-const unorderedList = document.getElementById("news-list");
-const loader = document.getElementById("news-loader");
-const view = document.getElementById("news-view");
+const buttonSearch = document.getElementById("button-search");
+const buttonFavorite = document.getElementById("button-search");
 
-let unorderedListTags;
+buttonSearch.addEventListener("click", searchStocks);
 
-view.addEventListener("click", viewMoreOrLess);
+function searchStocks() {
+    event.preventDefault();
 
-// On window load or callback, create list of news items
-function createList(num) {
-    finnhubClient.marketNews("general", {}, (error, data, response) => {
-        const dataArray = data;
+    const input = document.getElementById("stock-search").value.toUpperCase();
 
-        for (let i = 0; i < num; i++) {
-            const image = dataArray[i].image;
-            const title = dataArray[i].headline;
-            const link = dataArray[i].url;
-            createNewsItem(image, title, link);
+    getCompanyProfile(input)
+    getQuote(input);
+    getBasicFinancials(input);
+}
+
+function getCompanyProfile(input) {
+    finnhubClient.companyProfile2({'symbol': `${input}`}, (error, data, response) => {
+        if (error) {
+            console.log("Error: ", error);
+        } else {
+            loadCompanyProfile(data);
         }
-
-        // Hide loader
-        loader.classList.add("hidden");
-    })
+    });
 }
 
-function createNewsItem(image, title, link) {
-    const itemHTML = 
-    `<li class="py-3 sm:py-4 pr-4">
-        <div class="flex space-x-4">
-            <img class="flex-shrink-0 w-24 h-24 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-md object-cover" src=${image}>
-            <a class="text-base font-medium text-gray-900 dark:text-white line-clamp-3" href=${link}>
-                ${title}
-            </a>
-        </div>
-    </li>`;
-
-    unorderedList.insertAdjacentHTML("beforeend", itemHTML);
+function getQuote(input) {
+    finnhubClient.quote(`${input}`, (error, data, response) => {
+        if (error) {
+            console.log("Error: ", error);
+        } else {
+            loadQuote(data);
+        }
+    });
 }
 
-function removeNewsItems() {
-    unorderedListTags = unorderedList.querySelectorAll("li");
-
-    for (const tag of unorderedListTags) {
-        tag.remove();
-    }
-
-    // Display loader
-    loader.classList.remove("hidden");
+function getBasicFinancials(input) {
+    finnhubClient.companyBasicFinancials(`${input}`, "all", (error, data, response) => {
+        if (error) {
+            console.log("Error: ", error);
+        } else {
+            loadBasicFinancials(data);
+        }
+    });
 }
 
-function viewMoreOrLess() {
-    if (view.innerText === "View more") {
-        viewMore();
-    } else {
-        viewLess();
-    }
+function loadCompanyProfile (profile) {
+    // Load information from API
+    const company = profile.name;
+    const ticker = profile.ticker;
+    const industry = profile.finnhubIndustry;
+    const exchange = profile.exchange;
+    const currency = profile.currency;
+
+    const elemCompany = document.getElementById("company-name");
+    const elemTicker = document.getElementById("company-ticker");
+    const elemCurrency = document.getElementById("price-currency");
+
+    elemCompany.innerText = company;
+    elemTicker.innerText = ticker;
+    elemCurrency.innerText = currency;
 }
 
-function viewMore() {
-    view.innerText = "View less";
-    removeNewsItems();
-    createList(10);
+function loadQuote(quote) {
+    // Load information from API
+    const currentPrice = quote.c;
+    const priceChange = quote.d;
+    const priceChangePercentage = quote.dp;
+    const priceHigh = quote.h;
+    const priceLow = quote.l;
+    const priceOpen = quote.o;
+    const priceClose = quote.pc;
+
+    const elemCurrentPrice = document.getElementById("price-current");
+    const elemPriceShift = document.getElementById("price-shift");
+    const elemPriceShiftPercentage = document.getElementById("price-shift-percentage");
+
+    elemCurrentPrice.innerText = currentPrice;
+    elemPriceShift.innerText = priceChange;
+    elemPriceShiftPercentage.innerText = priceChangePercentage;
+
+    console.log(quote);
 }
 
-function viewLess() {
-    view.innerText = "View more";
-    removeNewsItems();
-    createList(5);
+function loadBasicFinancials(financials) {
+    // Load information from API
+    const peTTMPeriod = financials.series.quarterly.peTTM[0].period;
+    const peTTMV = financials.series.quarterly.peTTM[0].v;
+    const epsPeriod = financials.series.quarterly.eps[0].period;
+    const epsV = financials.series.quarterly.eps[0].v;
+    const npmTTM = financials.metric.netProfitMarginTTM;
+    const marketCap = financials.metric.marketCapitalization;
 }
 
-// On window load
 window.addEventListener("load", (e) => {
-    createList(5);
+    getCompanyProfile("AAPL")
+    getQuote("AAPL");
+    getBasicFinancials("AAPL");
 })
 },{"finnhub":12}]},{},[158]);

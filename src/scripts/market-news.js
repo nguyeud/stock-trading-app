@@ -1,9 +1,8 @@
 const finnhub = require("finnhub");
-
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
-api_key.apiKey = "";
-
+api_key.apiKey = "cedmv5iad3i32ebrltggcedmv5iad3i32ebrlth0";
 const finnhubClient = new finnhub.DefaultApi();
+
 const unorderedList = document.getElementById("news-list");
 const loader = document.getElementById("news-loader");
 const view = document.getElementById("news-view");
