@@ -8,6 +8,11 @@
     <title>stout stonks</title>
     <link rel="icon" type="image/x-icon" href="../../public/images/favicon-blue.png">
     <link rel="stylesheet" href="../../public/output.css">
+    <style>
+        #watchlist-list {
+            height: calc(100vh - 256px);
+        }
+    </style>
     <script>
         // FUNCTION: Toggle light and dark theme - on page load or when changing themes
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -255,35 +260,18 @@
                 </div>
             </div>
         </div>
-        <div class="md:w-3/5 w-full p-4 bg-white border rounded-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="md:w-3/5 w-full p-6 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-700">
             <div class="flex gap-2 mb-4 flex-col">
-                <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Watchlist</h5>
-                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-                    <li class="py-3 sm:py-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    email@windster.com
-                                </p>
-                            </div>
-                            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                $320
-                            </div>
-                        </div>
-                    </li>
-                    <li class="py-3 sm:py-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                    email@windster.com
-                                </p>
-                            </div>
-                            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                $320
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                <div class="flex gap-2 mb-2 flex-col">
+                    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Watchlist</h5>
+                    <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+                        id="news-view">
+                        Refresh data
+                    </a>
+                </div>
+                <div id="watchlist-list" class="grid grid-cols-1 lg:grid-cols-2 gap-2 overflow-y-auto">
+                    <!-- Insert cards here -->
+                </div>
             </div>
         </div>
     </main>
