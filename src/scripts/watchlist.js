@@ -6,10 +6,23 @@ const finnhubClient = new finnhub.DefaultApi();
 // DOM Elements
 const elemCompany = document.getElementById("company-name");
 const elemTicker = document.getElementById("company-ticker");
+const elemIndustry = document.getElementById("company-industry");
+const elemExchange = document.getElementById("company-exchange");
 const elemCurrency = document.getElementById("price-currency");
 const elemCurrentPrice = document.getElementById("price-current");
 const elemPriceShift = document.getElementById("price-shift");
 const elemPriceShiftPercentage = document.getElementById("price-shift-percentage");
+const elemPriceHigh = document.getElementById("price-high");
+const elemPriceLow = document.getElementById("price-low");
+const elemPriceOpen = document.getElementById("price-open");
+const elemPriceClose = document.getElementById("price-close");
+const elemPETTMPeriod = document.getElementById("PETTMPeriod");
+const elemPETTMV = document.getElementById("PETTMV");
+const elemEPSPeriod = document.getElementById("EPSPeriod");
+const elemEPSV = document.getElementById("EPSV");
+const elemNPMTTM = document.getElementById("npmTTM");
+const elemMarketCap = document.getElementById("market-cap");
+
 
 // Buttons
 const buttonSearch = document.getElementById("button-search");
@@ -59,40 +72,36 @@ function getBasicFinancials(input) {
 
 function loadCompanyProfile (profile) {
     // Load information from API
-    const company = profile.name;
-    const ticker = profile.ticker;
-    const industry = profile.finnhubIndustry;
-    const exchange = profile.exchange;
-    const currency = profile.currency;
-
-    elemCompany = document.getElementById("company-name");
-    elemTicker = document.getElementById("company-ticker");
-    elemCurrency = document.getElementById("price-currency");
+    company = profile.name;
+    ticker = profile.ticker;
+    industry = profile.finnhubIndustry;
+    exchange = profile.exchange;
+    currency = profile.currency;
 
     elemCompany.innerText = company;
     elemTicker.innerText = ticker;
+    elemIndustry.innerText = industry;
+    elemExchange.innerText = exchange
     elemCurrency.innerText = currency;
 }
 
 function loadQuote(quote) {
     // Load information from API
-    const currentPrice = quote.c;
-    const priceChange = quote.d;
-    const priceChangePercentage = quote.dp;
-    const priceHigh = quote.h;
-    const priceLow = quote.l;
-    const priceOpen = quote.o;
-    const priceClose = quote.pc;
-
-    elemCurrentPrice = document.getElementById("price-current");
-    elemPriceShift = document.getElementById("price-shift");
-    elemPriceShiftPercentage = document.getElementById("price-shift-percentage");
+    currentPrice = quote.c;
+    priceChange = quote.d;
+    priceChangePercentage = quote.dp;
+    priceHigh = quote.h;
+    priceLow = quote.l;
+    priceOpen = quote.o;
+    priceClose = quote.pc;
 
     elemCurrentPrice.innerText = currentPrice;
     elemPriceShift.innerText = priceChange;
-    elemPriceShiftPercentage.innerText = priceChangePercentage;
-
-    console.log(quote);
+    elemPriceShiftPercentage.innerText = `(${priceChangePercentage}%)`;
+    elemPriceHigh.innerText = `$${priceHigh}`;
+    elemPriceLow.innerText = `$${priceLow}`;
+    elemPriceOpen.innerText = `$${priceOpen}`;
+    elemPriceClose.innerText = `$${priceClose}`;
 }
 
 function loadBasicFinancials(financials) {
@@ -101,8 +110,15 @@ function loadBasicFinancials(financials) {
     const peTTMV = financials.series.quarterly.peTTM[0].v;
     const epsPeriod = financials.series.quarterly.eps[0].period;
     const epsV = financials.series.quarterly.eps[0].v;
-    const npmTTM = financials.metric.netProfitMarginTTM;
+    const NPMTTM = financials.metric.netProfitMarginTTM;
     const marketCap = financials.metric.marketCapitalization;
+
+    elemPETTMPeriod.innerText = peTTMPeriod;
+    elemPETTMV.innerText = peTTMV;
+    elemEPSPeriod.innerText = epsPeriod;
+    elemEPSV.innerText = epsV;
+    elemNPMTTM.innerText = NPMTTM;
+    elemMarketCap.innerText = marketCap;
 }
 
 window.addEventListener("load", (e) => {
