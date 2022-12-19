@@ -5,8 +5,6 @@ import Dashboard from '../src/components/Dashboard';
 import ThemeContext from '../src/context/ThemeContext';
 import StockContext from "../src/context/StockContext";
 
-const e = React.createElement;
-
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [stockSymbol, setStockSymbol] = useState("FB");
@@ -18,7 +16,3 @@ function App() {
 }
 
 export default App;
-
-const domContainer = document.querySelector('#root');
-const root = ReactDOM.createRoot(domContainer);
-root.render(e(App));
