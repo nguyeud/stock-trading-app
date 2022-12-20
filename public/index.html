@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stout stonks</title>
     <link rel="icon" type="image/x-icon" href="images/favicon-blue.png">
+    <link rel="stylesheet" href="../src/styles/uicons.css">
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="./">
     <script>
@@ -20,13 +21,68 @@
 </head>
 
 <body class="flex flex-col min-h-screen">
-    <header>
-        <div class news-tape>
-            <rssapp-ticker id="EbJJY3rEuNzJt6rZ"></rssapp-ticker>
-            <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script> 
-        </div>               
-        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">            
-            <div class="container flex flex-wrap items-center justify-between mx-auto">                
+    <header>       
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">                  
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>    
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                "symbols": [
+                {
+                    "proName": "FOREXCOM:SPXUSD",
+                    "title": "S&P 500"
+                },
+                {
+                    "proName": "FOREXCOM:NSXUSD",
+                    "title": "US 100"
+                },
+                {
+                    "proName": "FX_IDC:EURUSD",
+                    "title": "EUR/USD"
+                },
+                {
+                    "proName": "BITSTAMP:BTCUSD",
+                    "title": "Bitcoin"
+                },
+                {
+                    "proName": "BITSTAMP:ETHUSD",
+                    "title": "Ethereum"
+                },
+                {
+                    "description": "S&P 500 ETF",
+                    "proName": "AMEX:SPY"
+                },
+                {
+                    "description": "Apple Inc",
+                    "proName": "NASDAQ:AAPL"
+                },
+                {
+                    "description": "Amazon Inc",
+                    "proName": "NASDAQ:AMZN"
+                },
+                {
+                    "description": "Microsoft Inc",
+                    "proName": "NASDAQ:MSFT"
+                },
+                {
+                    "description": "Google Inc",
+                    "proName": "NASDAQ:GOOGL"
+                },
+                {
+                    "description": "Netflix Inc",
+                    "proName": "NASDAQ:NFLX"
+                }
+                ],
+                
+                "showSymbolLogo": true,
+                "colorTheme": "dark",
+                "isTransparent": true,
+                
+                "locale": "en"
+            }
+                </script>
+            </div>           
+            <div class="container flex flex-wrap items-center justify-between mx-auto">                                
                 <a href="#" class="flex items-center">
                     <img id="nav-logo" src="images/logo-blue.png" class="h-6 mr-3 sm:h-9" alt="stout stonks logo" />
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">stout
@@ -99,7 +155,8 @@
             </p>
         </div>
         <div class="flex flex-col items-center text-center mb-4">
-            <img class="h-[30rem]" src="images/iphone-blank.png">
+            <img class="h-full" src="images/iphone-blank.png">
+            
         </div>
     </main>
     <footer class="p-2 bg-white md:flex md:items-center md:justify-between md:p-4 dark:bg-gray-900">
