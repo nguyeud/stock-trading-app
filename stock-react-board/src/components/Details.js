@@ -15,7 +15,10 @@ const Details = ({ details }) => {
   };
 
   const convertMillionToBillion = (number) => {
-    return (number / 1000).toFixed(2);
+    if (isNaN(number)) {
+      return ""
+    }
+    return (number / 1000).toFixed(2) + "B";
   };
 
   return (
@@ -29,8 +32,8 @@ const Details = ({ details }) => {
             <li key={item} className="flex-1 flex justify-between items-center">
               <span>{detailsList[item]}</span>
               <span className="font-bold">
-                {item === "marketCapitalization"
-                  ? `${convertMillionToBillion(details[item])}B`
+                {item === "marketCapitalization" 
+                  ? `${convertMillionToBillion(details[item])}`
                   : details[item]}
               </span>
             </li>
