@@ -27410,17 +27410,17 @@ function viewMoreOrLess() {
 function viewMore() {
     view.innerText = "View less";
     removeNewsItems();
-    createList(10);
+    createList(20);
 }
 
 function viewLess() {
     view.innerText = "View more";
     removeNewsItems();
-    createList(5);
+    createList(10);
 }
 
 // On window load
 window.addEventListener("load", (e) => {
-    createList(5);
+    createList(10);
 })
 },{"finnhub":12}]},{},[158]);
