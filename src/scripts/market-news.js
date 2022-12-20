@@ -1,9 +1,8 @@
 const finnhub = require("finnhub");
-
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
-api_key.apiKey = "";
-
+api_key.apiKey = "cedmv5iad3i32ebrltggcedmv5iad3i32ebrlth0";
 const finnhubClient = new finnhub.DefaultApi();
+
 const unorderedList = document.getElementById("news-list");
 const loader = document.getElementById("news-loader");
 const view = document.getElementById("news-view");
@@ -65,16 +64,16 @@ function viewMoreOrLess() {
 function viewMore() {
     view.innerText = "View less";
     removeNewsItems();
-    createList(10);
+    createList(20);
 }
 
 function viewLess() {
     view.innerText = "View more";
     removeNewsItems();
-    createList(5);
+    createList(10);
 }
 
 // On window load
 window.addEventListener("load", (e) => {
-    createList(5);
+    createList(10);
 })
