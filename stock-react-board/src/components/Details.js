@@ -23,7 +23,7 @@ const Details = ({ details }) => {
 
   return (
     <Card>
-      <ul className={`w-full h-full flex flex-col justify-between divide-y-1 ${
+      <ul className={`w-full h-full flex-col justify-between divide-y-1 ${
         darkMode ? "divide-gray-800" : null
       }`}
       >
