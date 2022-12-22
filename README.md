@@ -2,9 +2,9 @@
 ![Logo](/public/images/logo-blue.png "stout stonks logo")
 
 ## Contributors
-* Hitesh Ahir, @hitesh-ahir
-* Nick Houghton, @nhouru21
-* Uyen Nguyen, @nguyeud
+* Hitesh Ahir, @hitesh-ahir - stock ticker tape, news page
+* Nick Houghton, @nhouru21 - dashboard page, market news card, and React
+* Uyen Nguyen, @nguyeud - UI design, Tailwind/Flowbite, watchlist page
 
 ## What is stout stonks?
 stout stonks was created for our capstone project and is a simple stock watching web app to help the casual investor track their favorite exchanges. It has the functionality to track trends over multiple time periods, view current stock information and save to favorites, and view the latest general, market, business, and technology news.
