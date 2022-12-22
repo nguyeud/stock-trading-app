@@ -7,7 +7,7 @@ const SearchResults = ({ results }) => {
   const { setStockSymbol } = useContext(StockContext);
   return (
     <ul id="listDrop"
-      className={`absolute top-12 border-2 w-full rounded-md h-64 overflow-y-scroll ${
+      className={`absolute top-48 border-2 w-1/3 min-w-1/3 rounded-md h-64 overflow-y-scroll ${
         darkMode
           ? "bg-gray-900 border-gray-800 custom-scrollbar custom-scrollbar-dark"
           : "bg-white border-neutral-200 custom-scrollbar"

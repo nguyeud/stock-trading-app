@@ -71,7 +71,7 @@ const Chart = () => {
 
   return (
     <Card>
-      <ul className="flex absolute top-2 right-2 z-40">
+      <ul className="flex absolute top-2 right-2 z-40 max-h-80">
         {Object.keys(chartConfig).map((item) => (
           <li key={item}>
             <ChartFilter
@@ -84,18 +84,18 @@ const Chart = () => {
           </li>
         ))}
       </ul>
-      <ResponsiveContainer>
+      <ResponsiveContainer aspect={2}>
         <AreaChart data={data}>
           <defs>
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor={darkMode ? "#312e81" : "rgb(199 210 254)"}
+                stopColor={darkMode ? "#59b4cb" : "#bde8d7"}
                 stopOpacity={0.8}
               />
               <stop
                 offset="95%"
-                stopColor={darkMode ? "#312e81" : "rgb(199 210 254)"}
+                stopColor={darkMode ? "#59b4cb" : "#bde8d7"}
                 stopOpacity={0}
               />
             </linearGradient>

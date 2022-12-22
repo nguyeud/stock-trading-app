@@ -27,7 +27,16 @@ const Search = () => {
             console.log(error);
         }
     };
-    return <div className={`flex items-center my-4 border-2 rounded-md relative z-50 w-96 bg-white border-neutral-200 ${
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.listDrop')) {
+            setInput("");
+        setBestMatches([]);
+        }
+      }
+
+
+    return <div className={`flex w-full items-center z-50 ${
         darkMode ? "bg-gray-900 border-gray-800" : "bg-white-neutral-200"
         }`}
         >
@@ -46,7 +55,7 @@ const Search = () => {
         />
 
         {input && (
-        <button onClick={clear} className={`h-8 w-8 m-1 p-2 ${darkMode ? "bg-gray-900 border-gray-800" : "bg-white-neutral-200"}`}>
+        <button onClick={clear} className={`h-8 w-8 m-1 p-2 flex ${darkMode ? "bg-gray-900 border-gray-800" : "bg-white-neutral-200"}`}>
             <img src="https://static.thenounproject.com/png/2222192-200.png"></img>
         </button>
         )}
@@ -60,12 +69,6 @@ const Search = () => {
       {input && bestMatches.length > 0 ? (
       <SearchResults results={bestMatches} /> 
       ): null}
-      {window.onclick = function(event) {
-        if (!event.target.matches(document.getElementById("listDrop"))) {
-            setInput("");
-        setBestMatches([]);
-        }
-      }}
     </div>
     
 };
