@@ -33,7 +33,7 @@ function createNewsItem(image, title, link) {
     `<li class="py-3 sm:py-4 pr-4">
         <div class="flex space-x-4">
             <img class="flex-shrink-0 w-24 h-24 md:w-14 md:h-14 lg:w-24 lg:h-24 rounded-md object-cover" src=${image}>
-            <a class="text-base font-medium text-gray-900 dark:text-white line-clamp-3" href=${link}>
+            <a class="text-base font-medium text-gray-900 dark:text-white line-clamp-3" href=${link} target="_blank">
                 ${title}
             </a>
         </div>
