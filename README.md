@@ -10,6 +10,7 @@
 stout stonks was created for our capstone project and is a simple stock watching web app to help the casual investor track their favorite exchanges. It has the functionality to track trends over multiple time periods, view current stock information and save to favorites, and view the latest general, market, business, and technology news.
 
 ### Mock-up
+![mock-up](/public/images/mock-up.png "mock-up")
 
 ### Screenshots
 ![dashboard](/public/images/iphone_dashboard.png "dashboard")
