@@ -43,7 +43,7 @@ Due to the time limitation in our project, there were a few features that were f
 
 ## Frameworks and Libraries Used
 * https://www.Finnhub.io
-* https://www.newsapi.org
+* https://gnews.io
 * https://www.tradingview.com/
 * JS Libraries: Rechart, Browserify, React
 * CSS Frameworks: Tailwind CSS, Flowbite
