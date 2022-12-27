@@ -6,20 +6,14 @@ var newsDataArr = [];
 
 // apis
 
-const API_KEY = "867bdcacd36c4c1b8e93a0b2253902cc";
-const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
-const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=";
-const BUSINESS_NEWS = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=";
-const TECHNOLOGY_NEWS = "https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=8&apiKey=";
-const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
-
-
+const API_KEY = "bb64fbb7322af8dcae2fff59a2c951f3";
+const HEADLINES_NEWS = "https://gnews.io/api/v4/top-headlines?token=bb64fbb7322af8dcae2fff59a2c951f3&lang=en";
 window.onload = function() {    
     fetchHeadlines();
 };
 
 const fetchHeadlines = async () => {
-    const response = await fetch(HEADLINES_NEWS+API_KEY);
+    const response = await fetch(HEADLINES_NEWS);
     newsDataArr = [];
     if(response.status >=200 && response.status < 300) {
         const myJson = await response.json();
@@ -30,73 +24,11 @@ const fetchHeadlines = async () => {
     }
     displayNews();
 }
-
-const fetchGeneralNews = async () => {
-    const response = await fetch(GENERAL_NEWS+API_KEY);
-    newsDataArr = [];
-    if(response.status >=200 && response.status < 300) {
-      const myJson = await response.json();
-      newsDataArr = myJson.articles;
-    } else {
-      console.log(response.status, response.statusText);
-      
-      return;
-    }
-    displayNews();
-}
-
-const fetchBusinessNews = async () => {
-    const response = await fetch(BUSINESS_NEWS+API_KEY);
-    newsDataArr = [];
-    if(response.status >=200 && response.status < 300) {
-      const myJson = await response.json();
-      newsDataArr = myJson.articles;
-    } else {
-      console.log(response.status, response.statusText);
-      
-      return;
-    }
-    displayNews();
-}
-
-const fetchTechnologyNews = async () => {
-    const response = await fetch(TECHNOLOGY_NEWS+API_KEY);
-    newsDataArr = [];
-    if(response.status >=200 && response.status < 300) {
-        const myJson = await response.json();
-        newsDataArr = myJson.articles;
-    } else {
-      console.log(response.status, response.statusText);
-      
-      return;
-    }
-    displayNews();
-}
-
-const fetchQueryNews = async () => {
-  if(newsQuery.value == null)
-  return;
-
-  const response = await fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY);
-    newsDataArr = [];
-    if(response.status >= 200 && response.status < 300) {
-        const myJson = await response.json();
-        newsDataArr = myJson.articles;
-    } else {       
-      console.log(response.status, response.statusText);
-       
-      return;
-    }
-    displayNews();
-  }
-
 function displayNews() {
-    
-
     newsDataArr.forEach(news => {
       const firstNews = `<div class="p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
-          <img class="rounded-t-lg" src="${news.urlToImage}" />
+          <img class="rounded-t-lg" src="${news.image}" />
       </a>
       <div class="p-5">
           <div >
@@ -116,9 +48,7 @@ function displayNews() {
       </div>
   </div>`
       
-  newsCard.insertAdjacentHTML("beforeend", firstNews) 
-  
-     
+  newsCard.insertAdjacentHTML("beforeend", firstNews)      
     });
 }
 
